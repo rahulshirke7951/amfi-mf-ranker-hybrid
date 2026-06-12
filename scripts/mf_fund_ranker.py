@@ -1,3 +1,6 @@
+# In the score_funds() function, find this line: df["_asset_class"] = df[COLUMN_MAP["scheme_name"]].apply(assign_asset_tag) 
+# Replace it with: df["_asset_class"] = df["_cat"]
+
 import pandas as pd
 import re
 from datetime import datetime
@@ -202,7 +205,7 @@ def score_funds(df: pd.DataFrame) -> pd.DataFrame:
     df["_r2y_cagr"] = df["_r2y_raw"].apply(cagr_2y)
     df["_r3y"] = to_num(df[COLUMN_MAP["return_3y"]]).fillna(0)
     df["_cat"] = df[COLUMN_MAP["category"]].astype(str).str.strip().str.title()
-    df["_asset_class"] = df[COLUMN_MAP["scheme_name"]].apply(assign_asset_tag)
+    df["_asset_class"] = df["_cat"]
 
     df["_r1m_missing"] = to_num(df[COLUMN_MAP["return_1m"]]).isna()
     df["_r3m_missing"] = to_num(df[COLUMN_MAP["return_3m"]]).isna()
