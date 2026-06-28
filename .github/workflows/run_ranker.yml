@@ -1,4 +1,4 @@
-name: Weekly MF Ranker
+name: Hybrid MF Ranker
 
 on:
   schedule:
