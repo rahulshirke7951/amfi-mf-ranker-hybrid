@@ -44,7 +44,7 @@ jobs:
           git config --global user.email "actions@github.com"
 
           git add output/mf_ranked_hybrid.xlsx
-          git commit -m "📊 Update latest MF ranking" || echo "No changes to commit"
+          git commit -m "📊 Hybrid MF Ranker Week-$(date +%V) - $(TZ='Asia/Kolkata' date '+%d-%b-%Y %I:%M %p IST')" || echo "No changes to commit"
           git push
 
       - name: Upload artifact
