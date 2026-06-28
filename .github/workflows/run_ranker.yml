@@ -36,14 +36,14 @@ jobs:
       - name: Save latest output
         run: |
           mkdir -p output
-          mv mf_ranked_screener.xlsx output/mf_ranked_latest.xlsx
+          mv mf_ranked_screener.xlsx output/mf_ranked_hybrid.xlsx
 
       - name: Commit latest output
         run: |
           git config --global user.name "github-actions"
           git config --global user.email "actions@github.com"
 
-          git add output/mf_ranked_latest.xlsx
+          git add output/mf_ranked_hybrid.xlsx
           git commit -m "📊 Update latest MF ranking" || echo "No changes to commit"
           git push
 
@@ -51,4 +51,4 @@ jobs:
         uses: actions/upload-artifact@v4
         with:
           name: mf-ranked-latest
-          path: output/mf_ranked_latest.xlsx
+          path: output/mf_ranked_hybrid.xlsx
