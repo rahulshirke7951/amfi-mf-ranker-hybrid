@@ -47,7 +47,7 @@ COMPOSITE_BLEND = {
 
 FILTERS = {
     "cat_level_1": "Open Ended Schemes",
-    "cat_level_2": "Equity Scheme",
+    "cat_level_2": "Hybrid Scheme",
     "plan_type": "Regular",
     "option_type": "Growth",
 }
